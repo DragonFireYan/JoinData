@@ -17,6 +17,7 @@ add_new = [
 def getJsonData():
     jd = requests.get(URL)
     JSON_DATA = jd.json()
+    JSON_DATA["name"] = "JoinSwap token List"
     JSON_DATA["tokens"].extend(add_new)
     with open("JoinData.json", "w") as f:
         f.write(json.dumps(JSON_DATA))
